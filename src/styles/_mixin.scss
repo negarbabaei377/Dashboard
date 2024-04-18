@@ -1,0 +1,22 @@
+@import "./variables";
+
+@mixin _flex($direction:row,$justify:center,$align:center){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin _boxShadow($padding:10px){
+  -webkit-box-shadow: 2px 4px 10px 1px $box-shadow;
+  box-shadow: 2px 4px 10px 1px $box-shadow-gray;
+  color: $col-gray;
+  padding: $padding;
+}
+
+@mixin _image ($width:100px, $height:100px){
+  width: $width;
+  height: $height;
+  border-radius: 50%;
+  object-fit: cover;
+}
