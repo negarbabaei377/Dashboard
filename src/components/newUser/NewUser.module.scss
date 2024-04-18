@@ -1,0 +1,64 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.top, .bottom {
+  @include _flex($justify: none, $align: none);
+  @include _boxShadow;
+  margin: 20px;
+
+  h1 {
+    color: $col-lightgray;
+    font-size: 20px;
+  }
+
+  .left {
+    flex: 1;
+    text-align: center;
+
+    img {
+      @include _image;
+    }
+  }
+
+  .right {
+    flex: 2;
+
+    form{
+      @include _flex($justify: space-around, $align: none);
+      flex-wrap: wrap;
+      gap: 30px;
+
+      .formInput{
+        width: 40%;
+
+        label{
+          @include _flex($justify: none);
+          gap: 10px;
+          font-weight: bold;
+
+          .icon{
+            cursor: pointer;
+          }
+        }
+
+        input{
+          width: 100%;
+          padding: 5px;
+          border: none;
+          border-bottom: 1px solid $col-gray;
+        }
+      }
+
+      .buttonStyle{
+        width: 150px;
+        padding: 10px;
+        border: none;
+        background-color: $col-teal;
+        color: $col-white;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    }
+  }
+}
