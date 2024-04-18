@@ -1,0 +1,68 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.featured{
+  flex: 2;
+  @include _boxShadow;
+  .icon{
+    font-size: small;
+  }
+  .top{
+    @include _flex ($justify:space-between);
+    color: $col-gray;
+    .title{
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+  }
+
+  .bottom{
+    @include _flex($direction:column);
+    padding: 20px;
+    gap: 15px;
+
+    .featuredChart{
+      width: 100px;
+      height: 100px;
+    }
+    .title{
+      font-weight: 500;
+      color: $col-gray;
+    }
+    .amount{
+      font-size: 30px;
+    }
+    .description{
+      font-weight: 300;
+      font-size: 12px;
+      color: $col-gray;
+      text-align: center;
+    }
+
+    .summary{
+      @include _flex ($justify:space-between);
+      width: 100%;
+      .item{
+        text-align: center;
+
+        .itemTitle{
+          font-size: 14px;
+          color: $col-gray;
+        }
+
+        .itemResult{
+          @include _flex ($justify:none);
+          margin: 10px;
+          font-size: 15px;
+          &.positive{
+            color: $col-green;
+          }
+          &.negative{
+            color: $col-red;
+          }
+        }
+      }
+    }
+  }
+}
