@@ -1,0 +1,90 @@
+@import '../../styles/mixin';
+@import "../../styles/variables";
+
+.dataTable {
+  padding: 20px;
+
+  .title{
+    @include _flex($justify: space-between);
+    width: 100%;
+    font-size: 22px;
+    color: $col-gray;
+    margin-bottom: 10px;
+
+    .link{
+      text-decoration: none;
+      color: $col-green;
+      font-size: 16px;
+      font-weight: 400;
+      border: 1px solid $col-green;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover{
+        background-color: $col-green;
+        color: $col-white;
+        transition: 0.3s;
+      }
+    }
+  }
+
+  .cellWithImg {
+    @include _flex($justify: none);
+
+    .cellImg {
+      @include _image($width: 32px, $height:32px);
+      margin-right: 20px;
+    }
+  }
+
+  .cellWithStatus {
+    @include _flex;
+    border-radius: 5px;
+    padding: 0 5px;
+    height: 35px;
+    width: 60px;
+    margin-top: 8px;
+
+    &.active {
+      color: $col-green;
+      background-color: $bg-green;
+    }
+
+    &.pending {
+      color: $col-golden;
+      background-color: $bg-golden;
+    }
+
+    &.passive {
+      color: $col-crimson;
+      background-color: $bg-crimson;
+    }
+  }
+
+  .cellAction {
+    @include _flex($justify: none);
+    gap: 20px;
+    padding-top: 10px;
+
+    .viewButton {
+      @include _flex($justify: none);
+      height: 30px;
+      padding: 0 5px;
+      border-radius: 5px;
+      color: $col-darkblue;
+      border: 1px dotted $border-darkblue;
+      cursor: pointer;
+    }
+
+    .deleteButton {
+      @include _flex($justify: none);
+      height: 30px;
+      padding: 0 5px;
+      border-radius: 5px;
+      color: $col-crimson;
+      border: 1px dotted $border-crimson;
+      cursor: pointer;
+    }
+  }
+}
