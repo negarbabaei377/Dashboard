@@ -1,0 +1,28 @@
+@import '../../styles/mixin';
+@import "../../styles/variables";
+
+.table {
+  .cellWrapper {
+    @include _flex($justify: none);
+
+    .image {
+      @include _image($width:32px, $height:32px);
+      margin-right: 10px;
+    }
+  }
+
+  .status {
+    padding: 5px;
+    border-radius: 5px;
+
+    &.Approved {
+      color: $col-green;
+      background-color: $bg-green;
+    }
+
+    &.Pending {
+      color: $col-golden;
+      background-color: $bg-golden;
+    }
+  }
+}
