@@ -1,0 +1,76 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.sidebar {
+  flex: 1;
+  background-color: $col-white;
+  min-height: 100vh;
+  border-right: 0.5px solid $col-lightgray;
+  .top {
+    @include _flex;
+    height: 50px;
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: $col-dark-purple;
+    }
+  }
+  hr {
+    height: 0;
+    border: 0.5px solid $col-lightgray;
+  }
+  .center{
+    padding-left: 10px;
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      .title{
+        font-size: 10px;
+        font-weight: bold;
+        color: $col-gray;
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+      li{
+        @include _flex($justify:none);
+        padding: 5px;
+        cursor: pointer;
+        &:hover{
+          background-color: $bg-light;
+        }
+        .icon{
+          font-size: 18px;
+          color: $col-purple;
+        }
+        span{
+          font-size: 13px;
+          font-weight: 600;
+          color: $col-gray;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  .bottom{
+    @include _flex($justify:none);
+    margin: 10px;
+    .colorOption{
+      height: 20px;
+      width: 20px;
+      border-radius: 5px;
+      border: 1px solid $col-purple;
+      cursor: pointer;
+      margin: 5px;
+      &:nth-child(1){
+        background-color: $col-whitesmoke;
+      }
+      &:nth-child(2){
+        background-color: #333;
+      }
+    }
+  }
+}
+.noStyle{
+  text-decoration: none;
+}
