@@ -1,0 +1,14 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.chart{
+  flex: 4;
+  @include _boxShadow;
+
+  .title{
+    margin-bottom: 20px;
+  }
+  .chartGrid{
+    stroke: $chart-grid;
+  }
+}
