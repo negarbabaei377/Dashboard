@@ -1,0 +1,46 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.widget{
+  @include _flex($justify:space-between, $align:none);
+  @include _boxShadow;
+  flex: 1;
+  height: 100px;
+  border-radius: 10px;
+
+  .left, .right{
+    @include _flex ($direction:column, $justify:space-between, $align:none);
+
+    .title{
+      font-size: 14px;
+      font-weight: bold;
+      color: $col-mid-gray;
+    }
+    .counter{
+      font-size: 28px;
+      font-weight: 300;
+    }
+    .link{
+      width: max-content;
+      font-size: 12px;
+      border-bottom: 1px solid $col-gray;
+    }
+    .percentage{
+      @include _flex($justify:none);
+      font-size: 14px;
+
+      &.positive{
+        color: $col-green;
+      }
+      &.negative{
+        color: $col-red;
+      }
+    }
+    .icon{
+      font-size: 18px;
+      padding: 5px;
+      border-radius: 5px;
+      align-self: flex-end;
+    }
+  }
+}
