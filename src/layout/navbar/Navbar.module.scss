@@ -1,0 +1,61 @@
+@import '../../styles/mixin';
+@import '../../styles/variables';
+
+.navbar{
+  @include _flex($justify:none);
+  height: 50px;
+  border-bottom: 0.5px solid $col-lightgray;
+  font-size: 14px;
+  color:$col-darkgray;
+
+  .wrapper{
+    @include _flex($justify:space-between);
+    padding: 20px;
+    width: 100%;
+
+    .search{
+      @include _flex($justify:none);
+      border:0.5px solid $col-lightgray;
+      padding: 3px;
+
+      input{
+        border:none;
+        outline: none;
+        background-color: transparent;
+
+        &::placeholder{
+          font-size: 12px;
+        }
+      }
+    }
+    .items{
+      @include _flex($justify:none);
+
+      .item{
+        @include _flex($justify:none);
+        margin: 20px;
+        position: relative;
+
+        .icon{
+          font-size: 20px;
+        }
+        .avatar{
+          @include _image($width:30px, $height:30px);
+        }
+        .counter{
+          @include _flex;
+          height: 15px;
+          width: 15px;
+          color: $col-white;
+          background-color: $col-red;
+          border-radius: 50%;
+          font-size: 10px;
+          font-weight: bold;
+          position: absolute;
+          top: -5px;
+          right: -5px;
+        }
+      }
+    }
+  }
+}
